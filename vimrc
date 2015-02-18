@@ -5,9 +5,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Bundle 'Rykka/riv.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+
 call vundle#end()
 
 set term=builtin_ansi
@@ -44,8 +46,8 @@ set incsearch
 set showmatch
 set ai
 set mps+=<:>
-
-
+set laststatus=2
+let g:airline#extensions#syntastic#enabled = 1
 let g:delimitMate_autoclose = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:riv_disable_folding = 1
