@@ -25,13 +25,17 @@ all: syntax/m4.vim bundle/Vundle.vim
 install: all ${HOME}/.vimrc ${HOME}/.vim/gvimrc
 	@cp -a bundle $(HOME)/.vim/
 	@cp -a syntax $(HOME)/.vim/
-	@vim +PluginClean! +qall
-	@vim +PluginInstall +qall
+	@vim +PluginClean! +qall < `tty` > `tty`
+	@vim +PluginInstall +qall < `tty` > `tty`
 	@$(MAKE) check
 
 .PHONY: check
 check: all
 	@vim -u vimrc +qall < `tty` > `tty`
+
+.PHONY: update
+update:
+	@vim +PluginInstall! +qall < `tty` > `tty`
 
 bundle/Vundle.vim: bundle/$(dirstamp)
 	@if [ -d bundle/Vundle.vim ]; then cd $@ && git pull --quiet; fi
@@ -55,6 +59,6 @@ uninstall:
 
 .PHONY: clean
 clean:
-	@vim +PluginClean! +qall < `tty` > `tty`
+	@vim +PluginClean +qall < `tty` > `tty`
 	@rm -rf bundle
 	@rm -rf syntax
