@@ -23,7 +23,7 @@ all: syntax/m4.vim bundle/Vundle.vim
 
 .PHONY: install
 install: all ${HOME}/.vimrc ${HOME}/.vim/gvimrc
-	@cp -a bundle $(HOME)/.vim/
+	@if [ ! -d $(HOME)/.vim/bundle ]; then cp -a bundle $(HOME)/.vim/; fi
 	@cp -a syntax $(HOME)/.vim/
 	@vim +PluginClean! +qall < `tty` > `tty`
 	@vim +PluginInstall +qall < `tty` > `tty`
