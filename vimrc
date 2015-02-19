@@ -51,6 +51,11 @@ set nowrap
 set sidescroll=5
 set listchars+=precedes:<,extends:>
 
+" Indent numbers down the margin
+set fdc=2
+set fdm=indent
+set fdl=100
+
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 
