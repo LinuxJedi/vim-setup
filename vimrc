@@ -69,6 +69,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_ignore_files = ['\m\.rst$']
 
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_first_char = "│"
