@@ -4,12 +4,12 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Bundle 'Rykka/riv.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Rykka/riv.vim'
+Plugin 'Yggdroot/indentLine'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
-
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 set term=builtin_ansi
@@ -47,9 +47,15 @@ set showmatch
 set ai
 set mps+=<:>
 set laststatus=2
+set nowrap
+set sidescroll=5
+set listchars+=precedes:<,extends:>
+
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+
 let g:delimitMate_autoclose = 1
-let g:indent_guides_enable_on_vim_startup = 1
+
 let g:riv_disable_folding = 1
 let g:riv_highlight_code = 'lua,python,cpp,javascript,vim,sh,c'
 
@@ -63,3 +69,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
+
+let g:indentLine_showFirstIndentLevel = 1
+"let g:indentLine_first_char = "｜"
+"let g:indentLine_leadingSpaceChar = '·'
+"let g:indentLine_leadingSpaceEnabled = 1
+"let g:indentLine_char = "｜"
