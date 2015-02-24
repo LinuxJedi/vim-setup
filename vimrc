@@ -47,14 +47,16 @@ set showmatch
 set ai
 set mps+=<:>
 set laststatus=2
-set nowrap
-set sidescroll=5
+au! FileType rst set nowrap
+au! FileType rst set sidescroll=5
 set listchars+=precedes:<,extends:>
 
 " Indent numbers down the margin
 set fdc=2
 set fdm=indent
 set fdl=100
+
+au! FileType rst let &colorcolumn=join(range(81,999),",")
 
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
