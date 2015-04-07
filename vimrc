@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Rykka/riv.vim'
-Plugin 'Yggdroot/indentLine'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
@@ -47,16 +46,12 @@ set showmatch
 set ai
 set mps+=<:>
 set laststatus=2
-au! FileType rst set nowrap
-au! FileType rst set sidescroll=5
 set listchars+=precedes:<,extends:>
 
 " Indent numbers down the margin
 set fdc=2
 set fdm=indent
 set fdl=100
-
-au! FileType rst let &colorcolumn=join(range(81,999),",")
 
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -77,9 +72,3 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_ignore_files = ['\m\.rst$']
-
-let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_first_char = "│"
-"let g:indentLine_leadingSpaceChar = '·'
-"let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_char = "│"
