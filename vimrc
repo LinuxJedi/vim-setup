@@ -72,3 +72,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_ignore_files = ['\m\.rst$']
+
+let g:syntastic_c_compiler_options = '-std=gnu99 -Wno-deprecated-declarations'
+let g:syntastic_cpp_compiler_options = '-Wno-deprecated-declarations'
