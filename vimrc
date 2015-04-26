@@ -75,3 +75,5 @@ let g:syntastic_ignore_files = ['\m\.rst$']
 
 let g:syntastic_c_compiler_options = '-std=gnu99 -Wno-deprecated-declarations'
 let g:syntastic_cpp_compiler_options = '-Wno-deprecated-declarations'
+
+let g:riv_auto_format_table = 0
