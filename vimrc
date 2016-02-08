@@ -51,6 +51,7 @@ set mps+=<:>
 set laststatus=2
 set listchars+=precedes:<,extends:>
 set wildignore=*.o,*.lo,*.swp,*.bak,*.pyc,*.class
+set mouse=a
 
 " Indent numbers down the margin
 "set fdc=2
