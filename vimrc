@@ -5,13 +5,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Rykka/riv.vim'
-"Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
-Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'justinmk/vim-syntax-extra'
 Plugin 'jacoborus/tender'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 
 filetype plugin indent on
@@ -59,43 +58,43 @@ set mouse=a
 "set fdm=indent
 "set fdl=100
 
-"if !exists('g:airline_symbols')
-"   let g:airline_symbols = {}
-"endif
-"let g:airline#extensions#branch#enabled = 1
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+endif
+let g:airline#extensions#branch#enabled = 1
 
 "This option slows console VIM a lot
 "let g:airline#extensions#tabline#enabled = 1
 
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.crypt = '🔒'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.notexists = '∄'
-"let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
 
-let g:lightline = { 'colorscheme': 'tender',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename' ] ]
-      \ },
-      \ 'component': {
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': '▶', 'right': '◀' },
-      \ 'subseparator': { 'left': '▶', 'right': '◀' }
-      \ }
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+" enable tender airline theme
+let g:tender_airline = 1
+" set airline theme
+let g:airline_theme = 'tender'
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting = 1
+
 
 let g:riv_disable_folding = 1
 let g:riv_highlight_code = 'lua,python,cpp,javascript,vim,sh,c,bash,nginx'
